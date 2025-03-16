@@ -57,10 +57,8 @@ def Morning_tasks():
     UserId = 324430515
     db.ACTIONS_QUESTS_FOR_TODAY(UserId, "———— 🔆 MORNING ————", action="add")
     db.ACTIONS_QUESTS_FOR_TODAY(UserId, "Я БЛАГОДАРЕН ЗА ВСЕ ❤️", action="add")
-    db.ACTIONS_QUESTS_FOR_TODAY(UserId, "ДАЙ МНЕ СИЛЫ ДЛЯ ПРЕОДОЛЕНИЯ ВСЕХ ПРЕГРАД", action="add")
     db.ACTIONS_QUESTS_FOR_TODAY(UserId, "———— 🌙 NIGHT ————", action="add")
-    db.ACTIONS_QUESTS_FOR_TODAY(UserId, "Не дрочил", action="add")
-    db.ACTIONS_QUESTS_FOR_TODAY(UserId, "Записать квесты на завтра", action="add")
+    db.ACTIONS_QUESTS_FOR_TODAY(UserId, "Записать задания на завтра", action="add")
 
     Some_methods.MORNING_TASKS(action="send", UserId=324430515)
 
@@ -134,39 +132,17 @@ def Remind_evenng():
                     db.ACTIONS_FOR_QUEUE(action="delete", UnicKey_input=UnicKey)
 
 
-            # elif data_type == "post_video":
-            #     now_date_obj = dt.datetime.strptime(now_date, '%d:%H:%M')
-            #     time_before_obj = dt.datetime.strptime(time_before, '%d:%H:%M')
-            #     if now_date_obj > time_before_obj:
-            #         if now_date_obj > time_before_obj:
-            #             if now_date_obj > time_before_obj:
-            #                 if now_date_obj > time_before_obj:
-            #                     bot.send_message(UserId, f"Этот должен пробить 100КК💸💸💸", parse_mode='HTML', reply_markup=markup_finish_post_video)
-            #                     db.ACTIONS_FOR_QUEUE(action="delete", UnicKey_input=UnicKey)
-            #                 else:
-            #                     bot.send_message(UserId, f"Нужно больше просмотров💸💸💸", parse_mode='HTML', reply_markup=markup_finish_post_video)
-            #                     db.ACTIONS_FOR_QUEUE(action="delete", UnicKey_input=UnicKey)
-            #             else:
-            #                 bot.send_message(UserId, f"Некст видосы летят💸💸💸", parse_mode='HTML', reply_markup=markup_finish_post_video)
-            #                 db.ACTIONS_FOR_QUEUE(action="delete", UnicKey_input=UnicKey)
-            #         else:
-            #             bot.send_message(UserId, f"Жду первые видосы💸💸💸", parse_mode='HTML', reply_markup=markup_finish_post_video)
-            #             db.ACTIONS_FOR_QUEUE(action="delete", UnicKey_input=UnicKey)
-            #     else:
-            #         pass
-
-
             elif data_type == "i_will_be_success":
                 now_date_obj = dt.datetime.strptime(now_date, '%d:%H:%M')
                 if now_date_obj > time_before:
                     some_dict = {
                         1 : "У МЕНЯ ПОЛУЧИТСЯ",
-                        2 : "Я СМОГ БЛЯТЬ",
-                        3 : "Я ПОСТУПИЛ В ИННОПОЛИС СУКА",
-                        4 : "Я ПОСТУПИЛ В ИННОПОЛИС",
-                        5 : "У МЕНЯ ВСЁ ПОЛУЧИЛОСЬ",
-                        6 : "I WILLL BE SUCCEESSSS",
-                        8 : "Я БЛАГОДАРЕН ЗА ВЕСЬ ПИЗДЕЦ",
+                        2 : ".........",
+                        3 : "..................",
+                        4 : "..............",
+                        5 : ".........................",
+                        6 : "................",
+                        8 : ".............................",
                     }
                     rand_num = random.randint(1, 7)
     
@@ -528,7 +504,7 @@ def callback_inline(call):
                     message_text = "\n\n❇️ ".join(res)
                 else:
                     message_text = "Вы не добавили задачи"
-                bot.send_message(call.from_user.id, f"®️<i>Эти квесты тебе помогают, но если ты хочешь быть дерьмом не делай их. Выбор всегда твой</i>\n\n<blockquote>📬<b>Your quests for today:\n\n❇️ {message_text}</b></blockquote>", parse_mode='HTML', reply_markup=markup_Inline_BACK_AFTER_STOP)
+                bot.send_message(call.from_user.id, f"®️<i>?????????????????</i>\n\n<blockquote>📬<b>Your quests for today:\n\n❇️ {message_text}</b></blockquote>", parse_mode='HTML', reply_markup=markup_Inline_BACK_AFTER_STOP)
                 bot.delete_message(call.message.chat.id, call.message.message_id)
 
                 queue_list = db.ACTIONS_FOR_QUEUE(action="get")
@@ -565,7 +541,7 @@ def callback_inline(call):
                     message_text = "\n\n ".join(res)
                 else:
                     message_text = "Вы не добавили задачи"
-                bot.edit_message_text(chat_id=call.from_user.id, message_id=call.message.message_id, text=f"®️<i>Эти квесты тебе помогают, но если ты хочешь быть дерьмом не делай их. Выбор всегда твой</i>\n\n<blockquote>📬<b>Your quests for today:\n\n❇️ {message_text}</b></blockquote>", parse_mode='HTML', reply_markup=markup_Inline_BACK_QUESTS_FOR_TODAY)
+                bot.edit_message_text(chat_id=call.from_user.id, message_id=call.message.message_id, text=f"®️<i>?????????????????</i>\n\n<blockquote>📬<b>Your quests for today:\n\n❇️ {message_text}</b></blockquote>", parse_mode='HTML', reply_markup=markup_Inline_BACK_QUESTS_FOR_TODAY)
 
 
             elif call.data=="QUESTS_FOR_TODAY":
@@ -621,38 +597,6 @@ def callback_inline(call):
 
                 bot.edit_message_text(chat_id=call.from_user.id, message_id=call.message.message_id, text=msg_text.strip(), reply_markup=markup_Inline_BACK, parse_mode='HTML')
 
-
-
-            # elif call.data=="MY_GOALS":
-            #     bot.edit_message_text(chat_id=call.from_user.id, message_id=call.message.message_id, text=f"Выбери действие:", reply_markup=markup_Inline_MY_GOALS_MENU)
-
-            # elif call.data=="ADD_GOAL":
-            #     bot.edit_message_text(chat_id=call.from_user.id, message_id=call.message.message_id, text=f"Выбери действие:", reply_markup=markup_Inline_MY_GOALS_MENU)
-
-            # elif call.data=="COMPLETE_GOAL":
-            #     bot.edit_message_text(chat_id=call.from_user.id, message_id=call.message.message_id, text=f"Выбери действие:", reply_markup=markup_Inline_MY_GOALS_MENU)
-
-            # elif call.data=="DELETE_GOAL":
-            #     bot.edit_message_text(chat_id=call.from_user.id, message_id=call.message.message_id, text=f"Выбери действие:", reply_markup=markup_Inline_MY_GOALS_MENU)
-
-            # elif call.data=="CHECK_GOAL":
-            #     bot.edit_message_text(chat_id=call.from_user.id, message_id=call.message.message_id, text=f"Выбери действие:", reply_markup=markup_Inline_MY_GOALS_MENU)
-
-
-            # elif call.data=="TRY_AWAIKENING":
-            #     bot.delete_message(call.message.chat.id, call.message.message_id)
-            #     num_input = bot.send_message(call.from_user.id, "<b>Введите число:💤</b>\n\nПример:\n08:45 или 12:15", parse_mode='HTML')
-            #     bot.register_next_step_handler(num_input, Some_methods.calculation_for_awakening)
-
-            # elif call.data=="REFERAL_UPDATE":
-            #     bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-            #     invite_people(call.message, user_id=call.from_user.id)
-
-            # elif call.data=="CHECK_TRANSFERRED":
-            #     invited_people(call.message, user_id=call.from_user.id)
-
-            # elif call.data=="INFO_SLEEP":
-            #     Info_for_Sleep(call)
 
     except Exception as e:
         print(repr(e))
