@@ -48,15 +48,7 @@ import config
 # formatted_date = current_time.strftime('%d %B').lstrip('0')
 # print(formatted_date)
 
-# some_dict = {
-#     1 : "У МЕНЯ ПОЛУЧИТСЯ",
-#     2 : "Я СМОГ БЛЯТЬ",
-#     3 : "Я ПОСТУПИЛ В ИННОПОЛИС СУКА",
-#     4 : "Я ПОСТУПИЛ В ИННОПОЛИС",
-#     5 : "У МЕНЯ ВСЁ ПОЛУЧИЛОСЬ",
-#     6 : "I WILLL BE SUCCEESSSS",
-#     7 : "I'M A SUCCEESSSS",
-# }
+
 # rand_num = random.randint(1, 7)
 # print(some_dict[rand_num])
 
